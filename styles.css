@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #78492A;
+  --secondary-color: #d36a2a;
+  --terceirary-color: #FFF4E9;
+}
+ss
+/* Reset básico */
+body {
+  margin: 0px;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: #333;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: var(--terceirary-color); /* Define o fundo do cabeçalho com a cor terciária definida no :root */
+  padding: 20px 0;                          /* Adiciona espaçamento interno (cima/baixo: 20px, esquerda/direita: 20px) */
+  
+
+}
+
+.logo-container {
+  display: flex;                            /* Ativa o Flexbox para alinhar os elementos filhos lado a lado */
+  justify-content: space-evenly;           /* Distribui as logos com espaços iguais antes, entre e depois delas */
+  align-items: center;                     /* Alinha verticalmente ao centro */
+  padding: 0 5vw;                          /* Espaçamento lateral proporcional à largura da tela (5% de cada lado) */
+  gap: 0;                                  /* Não define espaçamento adicional entre os elementos — o space-evenly cuida disso */
+}
+
+.logo-container img {
+  max-width: 100%;                         /* Garante que a imagem nunca ultrapasse o tamanho do contêiner */
+  height: auto;                            /* Mantém a proporção da imagem */
+  width: clamp(100px, 25%, 300px);         /* Define largura responsiva: mínimo 100px, ideal 25% do contêiner, máximo 300px */
+  margin-top: -20px;                       /* Adiciona um espaçamento negativo */
+}
+
+
+
+
+
+/* Menu horizontal abaixo da logo */
+.nav-links {
+  display: flex;               /* Coloca os itens do menu lado a lado (em linha) */
+  flex-wrap: wrap;             /* Permite que os itens quebrem linha se faltar espaço */
+  justify-content: space-evenly;     /* Centraliza todos os itens do menu horizontalmente */
+  gap: 20px;         /* Espaçamento entre os itens do menu */
+  list-style: none;            /* Remove os marcadores (bolinhas) da lista */
+  padding: 0;                  /* Remove espaçamento interno da lista */
+  margin: 0;                   /* Remove espaçamento externo da lista */
+}
+
+.nav-links li a {
+  text-decoration: none;       /* Remove o sublinhado dos links */
+  color: var(--primary-color);/* Define a cor do link como a cor primária definida no :root */
+  font-weight: bold;           /* Deixa o texto dos links em negrito */
+  font-size: 1.5rem;           /* Aumenta o tamanho da fonte dos links */
+  transition: color 0.3s ease;/* Animação suave de transição na troca de cor ao passar o mouse */
+}
+
+.nav-links li a:hover {
+  color: var(--secondary-color); /* Muda a cor do link quando o mouse passa por cima */
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 6px 15px; /* gap vertical e horizontal menores */
+    row-gap: 4px;  /* reforça espaçamento vertical baixo */
+  }
+
+  .nav-links li {
+    margin: 0;
+    padding: 0;
+    line-height: 1; /* evita altura extra nas linhas */
+  }
+
+  .nav-links li a {
+    font-size: 1rem;     /* menor, mas ainda legível */
+    padding: 2px 4px;    /* espaço interno menor */
+
+  }
+  .nav-links li a:visited {
+    color: var(--primary-color); /* Mantém a cor original mesmo após o clique */
+  }
+}
+
+/* ====== Seção de Abertura / Hero ====== */
+.inicio {
+  background-color: var(--secondary-color); /* Fundo laranja vibrante para chamar atenção logo no início */
+  color: white;                             /* Texto branco para contraste com o fundo */
+  padding: 2rem 1rem;                       /* Espaçamento interno confortável nas laterais e vertical */
+  text-align: center;                       /* Centraliza o conteúdo na tela */
+  border-radius: 8px;                       /* Bordas levemente arredondadas */
+  margin: 1rem 0;                           /* Espaço acima e abaixo da seção */
+}
+
+.inicio h1 {
+  font-size: 1.8rem;                        /* Tamanho maior para o título principal */
+  margin-bottom: 0.5rem;                    /* Espaço abaixo do título */
+}
+
+.inicio h2 {
+  font-size: 1.2rem;                        /* Subtítulo menor, mas ainda destacado */
+  font-weight: normal;                      /* Peso normal para suavizar o visual */
+}
+
+
+/* ====== Seção 'Quem Sou' ====== */
+.sobre {
+  display: flex;                     /* Ativa o layout lado a lado */
+  flex-wrap: wrap;                   /* Permite empilhar em telas pequenas */
+  align-items: center;               /* Centraliza verticalmente */
+  justify-content: center;           /* Centraliza o conteúdo */
+  gap: 2rem;                         /* Espaço entre imagem e texto */
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.sobre img {
+  max-width: 400px;                  /* Tamanho máximo da imagem */
+  width: 100%;                       /* Responsiva */
+  border-radius: 12px;               /* Borda arredondada */
+  flex-shrink: 0;                    /* Impede que a imagem encolha */
+}
+
+.sobre .texto {
+  flex: 1;                           /* Ocupa o espaço restante */
+  max-width: 600px;                  /* Limita a largura para boa leitura */
+  font-size: clamp(1rem, 1vw + 0.8rem, 1.2rem); /* Texto que responde ao tamanho da tela */
+  line-height: 2.0;
+  color: var(--primary-color);
+}
+
+.sobre .texto h2 {
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.2rem); /* Título também responsivo */
+  margin-bottom: 1rem;
+}
+
+.selos {
+  display: flex;                            /* Alinha os selos lado a lado */
+  gap: 1rem;                                /* Espaço entre os selos */
+  justify-content: center;                 /* Centraliza os selos na tela */
+  margin-top: 1rem;                         /* Espaço acima dos selos */
+}
+
+.selos img {
+  margin: 0 1.rem;                        /* Espaço lateral entre os selos */
+  width: 120px;                              /* Tamanho fixo para cada selo */
+  height: auto;                              /* Mantém proporção original */
+  transform: scale(1);                       /* Escala inicial */
+  &:hover {
+    transform: scale(1.2);                   /* Aumenta a escala ao passar o mouse */
+  }
+}
+
+@media (max-width: 768px) {
+  .inicio {
+    padding: 0.5rem 0.3rem;                /* Reduz o espaçamento interno em telas menores */
+  }
+  .inicio h1 {
+    font-size: 1.5rem;                     /* Título menor em telas pequenas */
+  }
+  .inicio h2 {
+    font-size: 1rem;                       /* Subtítulo menor em telas pequenas */
+    }
+    
+    
+  .sobre {
+    flex-direction: column;  /* Em telas pequenas, empilha */
+    text-align: center;      /* Centraliza o texto */
+  }
+
+  .sobre img {
+    max-width: 100%;          /* Ocupa quase toda a largura */
+    margin: -1rem 0; /* Espaço negativo para aproximar a imagem do topo */
+
+  }
+
+  .sobre .texto {
+    font-size: 1rem;         /* Texto ajustado para celular */
+    max-width: 90%;
+  }
+
+  .sobre .texto h2 {
+    font-size: 1.5rem;       /* Tamanho bom para leitura em mobile */
+  }
+}
+
+
+
+/* ====== Seção Depoimentos ====== */
+input[type="radio"] {
+  display: none; /* Esconde os inputs de rádio usados para controle dos slides */
+}
+
+.carousel-wrapper {
+  max-width: 50%;             /* Limita a largura do carrossel a 50% da tela */
+  margin: 2rem auto;          /* Centraliza horizontalmente e adiciona margem vertical */
+  position: relative;         /* Necessário para posicionar as setas absolutas dentro */
+}
+
+.carousel {
+  overflow: hidden;           /* Esconde o conteúdo que ultrapassa os limites */
+  border-radius: 12px;        /* Cantos arredondados */
+  background-color: #FFF4E9;  /* Cor de fundo suave */
+  position: relative;         /* Define referência para elementos com position: absolute */
+}
+
+.cards {
+  display: flex;              /* Deixa os slides em linha (horizontalmente) */
+  width: 100%;                /* Ocupa toda a largura do wrapper */
+  transition: transform 0.5s ease-in-out; /* Animação suave na troca de slides */
+}
+
+.depoimento {
+  flex: 0 0 100%;             /* Cada depoimento ocupa 100% da largura do carrossel */
+  box-sizing: border-box;     /* Inclui padding/border no cálculo de largura */
+  padding: 2rem;              /* Espaço interno em todos os lados */
+  text-align: center;         /* Centraliza o texto */
+  color: #78492A;             /* Cor do texto marrom */
+  background-color: #FFF4E9;  /* Fundo igual ao do carrossel */
+  display: flex;              /* Flexbox para organizar conteúdo interno */
+  flex-direction: column;     /* Itens em coluna */
+  align-items: center;        /* Centraliza horizontalmente */
+  justify-content: center;    /* Centraliza verticalmente */
+}
+
+#depoimentos h2 {
+  font-size: 2.0rem;                          /* Tamanho fixo padrão */
+  font-size: clamp(1rem, 1vw + 1.2rem, 2rem); /* Tamanho responsivo entre 1rem e 2rem */
+  color: var(--primary-color);               /* Usa variável de cor primária */
+  padding: 100px 0 10px 10px;                /* Espaço em cima (100px), embaixo (10px), esquerda (10px) */
+  text-align: center;                        /* Centraliza o título */
+}
+
+.depoimento img {
+  width: 200px;             /* Largura fixa da imagem */
+  border-radius: 8px;       /* Bordas arredondadas */
+  margin-bottom: 1rem;      /* Espaço entre a imagem e o texto */
+}
+
+.depoimento blockquote {
+  font-style: italic;       /* Itálico para a citação */
+  max-width: 400px;         /* Limita a largura do texto */
+  margin: 1rem auto;        /* Espaço vertical e centraliza horizontalmente */
+}
+
+/* Mover slides */
+#depo1:checked ~ .carousel .cards {
+  transform: translateX(0%);     /* Slide 1 visível */
+}
+#depo2:checked ~ .carousel .cards {
+  transform: translateX(-100%);  /* Slide 2 visível */
+}
+#depo3:checked ~ .carousel .cards {
+  transform: translateX(-200%);  /* Slide 3 visível */
+}
+
+/* SETAS */
+.carousel-arrows {
+  display: none;                 /* Esconde por padrão */
+  position: absolute;           /* Fica sobre o carrossel */
+  top: 50%;                     /* Centraliza verticalmente */
+  width: 100%;                  /* Ocupar toda a largura para posicionar as setas */
+  padding: 1rem 0rem;              /* Espaço lateral interno */
+  transform: translateY(-50%);  /* Ajusta para o centro exato */
+  justify-content: space-between; /* Uma seta à esquerda e outra à direita */
+  pointer-events: none;         /* Bloqueia clique fora das setas */
+}
+
+.carousel-arrows label {
+  font-size: 2rem;              /* Tamanho das setas */
+  color: #78492A;               /* Cor marrom das setas */
+  cursor: pointer;              /* Mostra ponteiro ao passar por cima */
+  user-select: none;            /* Impede seleção do texto da seta */
+  pointer-events: all;          /* Permite clique apenas na seta */
+  padding: 0.2em 0.6em;         /* Espaço interno */
+  border-radius: 8px;           /* Bordas arredondadas */
+  transition: background 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+.carousel-arrows label:hover {
+  background: #e2d6c9;          /* Cor de fundo ao passar o mouse */
+}
+
+/* Mostrar apenas as setas do slide ativo */
+#depo1:checked ~ .carousel .carousel-arrows:not(.depo2):not(.depo3) {
+  display: flex;                /* Exibe setas apenas se não for depo2 ou depo3 */
+}
+#depo2:checked ~ .carousel .carousel-arrows.depo2 {
+  display: flex;                /* Exibe setas do slide 2 */
+}
+#depo3:checked ~ .carousel .carousel-arrows.depo3 {
+  display: flex;                /* Exibe setas do slide 3 */
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .carousel-wrapper {
+    max-width: 100rem;          /* O carrossel pode expandir mais em telas pequenas */
+  }
+
+  .depoimento img {
+    width: 80%;                /* Imagem ocupa largura do slide */
+  }
+}
+
+
+
+/* ====== Área de Atuação ====== */
+#area {
+  padding: 1.5rem 1rem;                        /* Espaço interno padrão */
+}
+
+#area h2 {
+  font-size: 1.5rem;                          /* Tamanho do título */
+  margin-bottom: 1rem;                        /* Espaço abaixo do título */
+  color: var(--primary-color);                /* Cor primária definida no :root */
+  text-align: center;                         /* Centraliza o título */
+}
+
+
+#area p {
+  text-align: center;                          /* Centraliza o texto */
+  font-weight: bold;                           /* Dá destaque à frase */
+  color: var(--secondary-color);
+}
+
+
+/* ====== Valores ====== */
+#valores {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border-radius: 12px;
+  margin: 2rem 0;
+  box-sizing: border-box;
+}
+
+#valores h2 {
+  font-size: clamp(1.5rem, 1.2vw + 1rem, 2rem);
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+#valores h3 {
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin: 2rem 0 1rem;
+}
+
+/* Estilos da TABELA */
+#valores table {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #E7C8A0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#valores th,
+#valores td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  color: var(--primary-color);
+}
+
+#valores thead {
+  background-color: #E7C8A0; /* tom mais claro do laranja */
+}
+
+#valores tbody tr:nth-child(odd) {
+  background-color: #fdf5ee; /* laranja clarinho alternado */
+}
+
+
+
+/* ====== Contato ====== */

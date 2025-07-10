@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CÃOminho da Felicidade</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <header class="header">
-    <div class="logo">
-      <img src="img/logo.png" alt="Mulher passeando com um golden retriever feliz, flores e corações em volta. Texto: Cãominho da Felicidade" />
+    <div class="logo-container">
+      <img src="img/logo1.png" alt="Mulher passeando com um golden retriever feliz, flores e corações em volta. " />
+      <img src="img/logo2.png" alt="Logo CÃOminho da Felicidade" />
     </div>
 
     <nav class="nav">
@@ -23,8 +26,6 @@
         <li><a href="#blog">Blog</a></li>
       </ul>
     </nav>
-
-    <a href="https://wa.me/5511999999999?text=Olá%2C+gostaria+de+agendar+um+passeio!" class="btn-agendar" target="_blank">Agendar agora</a>
   </header>
 
   <main>
@@ -37,7 +38,11 @@
       <img src="img/ftpasseio.png" alt="Dogwalker sorridente com cães felizes" />
       <div class="texto">
         <h2>Quem sou</h2>
-        <p>Me chamo Ana e sou dogwalker com mais de 5 anos de experiência cuidando de cães de todos os tamanhos e temperamentos. Amo o que faço e acredito que cada passeio é mais do que uma simples caminhada — é um momento de alegria, liberdade e conexão. Trabalho sempre com responsabilidade, atenção e muito carinho, garantindo que seu pet tenha uma experiência segura, divertida e cheia de afeto. Se você procura alguém de confiança para cuidar do seu melhor amigo, pode contar comigo!</p>
+        <p>Me chamo Ana e sou dogwalker com mais de 5 anos de experiência cuidando de cães de todos os tamanhos e
+          temperamentos. Amo o que faço e acredito que cada passeio é mais do que uma simples caminhada — é um momento
+          de alegria, liberdade e conexão. Trabalho sempre com responsabilidade, atenção e muito carinho, garantindo que
+          seu pet tenha uma experiência segura, divertida e cheia de afeto. Se você procura alguém de confiança para
+          cuidar do seu melhor amigo, pode contar comigo!</p>
         <div class="selos">
           <img src="img/selo1.png" alt="Selo confiança" />
           <img src="img/selo2.png" alt="Selo amor aos pets" />
@@ -47,28 +52,57 @@
 
     <section id="depoimentos">
       <h2>Depoimentos</h2>
-      <div class="depoimento">
-        <figure>
-          <img src="img/depoimento1.png" alt="Mariana com o Max" />
-        </figure>
-        <blockquote>"A Ana é maravilhosa! Meu cachorro sempre volta feliz e cansado. Recomendo demais!"</blockquote>
-        <p><strong>Mariana</strong>, tutora do Max</p>
-      </div>
-      <div class="depoimento">
-        <figure>
-          <img src="img/depoimento2.png" alt="Juliana com o Thor" />
-        </figure>
-        <blockquote>"A Ana é incrível! O Thor ama os passeios e voltou a ser mais ativo."</blockquote>
-        <p><strong>Juliana</strong>, tutora do Thor</p>
-      </div>
-      <div class="depoimento">
-        <figure>
-          <img src="img/depoimento3.png" alt="Ricardo com a Nina" />
-        </figure>
-        <blockquote>"Profissional excelente. A Nina tem medo de tudo, mas com Ana ela se sente segura."</blockquote>
-        <p><strong>Ricardo</strong>, tutor da Nina</p>
+
+      <div class="carousel-wrapper">
+        <!-- Botões invisíveis para controlar o slide -->
+        <input type="radio" name="carousel" id="depo1" checked>
+        <input type="radio" name="carousel" id="depo2">
+        <input type="radio" name="carousel" id="depo3">
+
+        <div class="carousel">
+          <div class="cards">
+            <div class="depoimento">
+              <img src="img/depoimento1.png" alt="Mariana com o Max">
+              <blockquote>"A Ana é maravilhosa! Meu cachorro sempre volta feliz e cansado. Recomendo demais!"
+              </blockquote>
+              <p><strong>Mariana</strong>, tutora do Max</p>
+            </div>
+
+            <div class="depoimento">
+              <img src="img/depoimento2.png" alt="Juliana com o Thor">
+              <blockquote>"A Ana é incrível! O Thor ama os passeios e voltou a ser mais ativo."</blockquote>
+              <p><strong>Juliana</strong>, tutora do Thor</p>
+            </div>
+
+            <div class="depoimento">
+              <img src="img/depoimento3.png" alt="Ricardo com a Nina">
+              <blockquote>"Profissional excelente. A Nina tem medo de tudo, mas com Ana ela se sente segura."
+              </blockquote>
+              <p><strong>Ricardo</strong>, tutor da Nina</p>
+            </div>
+          </div>
+
+          <!-- SETAS -->
+          <div class="carousel-arrows">
+            <label class="prev" for="depo3">&#10094;</label> <!-- ← -->
+            <label class="next" for="depo2">&#10095;</label> <!-- → -->
+          </div>
+
+          <div class="carousel-arrows depo2">
+            <label class="prev" for="depo1">&#10094;</label>
+            <label class="next" for="depo3">&#10095;</label>
+          </div>
+
+          <div class="carousel-arrows depo3">
+            <label class="prev" for="depo2">&#10094;</label>
+            <label class="next" for="depo1">&#10095;</label>
+          </div>
+        </div>
       </div>
     </section>
+
+
+
 
     <section id="area">
       <h2>Área de Atuação</h2>
@@ -79,24 +113,59 @@
       <h2>Valores</h2>
 
       <h3>Unitários</h3>
-      <ul>
-        <li>Passeio curto (30 min) — R$40</li>
-        <li>Passeio médio (45 min) — R$45</li>
-        <li>Passeio longo (1h) — R$55</li>
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Tipo de Passeio</th>
+            <th>Preço</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🐾 Passeio curto (30 min)</td>
+            <td>R$40</td>
+          </tr>
+          <tr>
+            <td>🐾 Passeio médio (45 min)</td>
+            <td>R$45</td>
+          </tr>
+          <tr>
+            <td>🐾 Passeio longo (1h)</td>
+            <td>R$55</td>
+          </tr>
+        </tbody>
+      </table>
 
       <h3>Pacotes</h3>
-      <ul>
-        <li>10 passeios curtos — R$350</li>
-        <li>10 passeios médios — R$400</li>
-        <li>10 passeios longos — R$460</li>
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Pacote</th>
+            <th>Preço</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🐾 10 passeios curtos</td>
+            <td>R$350</td>
+          </tr>
+          <tr>
+            <td>🐾 10 passeios médios</td>
+            <td>R$400</td>
+          </tr>
+          <tr>
+            <td>🐾 10 passeios longos</td>
+            <td>R$460</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
+
 
     <section id="contato">
       <h2>Contato</h2>
       <p>Para agendamentos e dúvidas, entre em contato pelo:</p>
-      <p>Whatsapp: 
+      <p>Whatsapp:
         <a href="https://wa.me/5511999999999">Clique aqui</a>
       </p>
       <p>Email: <a href="mailto:contato@caominho.com">contato@caominho.com</a></p>
@@ -122,9 +191,10 @@
     </section>
 
     <section id="botaoflutuante">
-  <a href="https://wa.me/5511999999999?text=Olá%2C+gostaria+de+agendar+um+passeio!" class="btn-agendar" target="_blank">
-    <i class="fab fa-whatsapp"></i> Agendar agora
-  </a>
+      <a href="https://wa.me/5511999999999?text=Olá%2C+gostaria+de+agendar+um+passeio!" class="btn-agendar"
+        target="_blank">
+        <i class="fab fa-whatsapp"></i> Agendar agora
+      </a>
     </section>
   </main>
 
@@ -132,4 +202,5 @@
     <p>&copy; 2025 CÃOminho da Felicidade. Todos os direitos reservados.</p>
   </footer>
 </body>
+
 </html>
