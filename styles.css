@@ -461,7 +461,7 @@ input[type="radio"] {
 #contato p {
   margin: 1rem 0;                             /* Espaço vertical entre os parágrafos */
   font-size: 1.4rem;                            /* Tamanho do texto */
-  color: #333;                                  /* Cor neutra para o texto */
+  color: var(--primary-color);                  /* Cor marrom */
 }
 
 #contato a {
