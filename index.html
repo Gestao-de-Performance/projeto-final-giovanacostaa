@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CÃOminho da Felicidade</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
-  <header class="header">
+  <header class="header container">
     <div class="logo-container">
-      <img src="img/logo1.png" alt="Mulher passeando com um golden retriever feliz, flores e corações em volta. " />
+      <img src="img/logo1.png" alt="Mulher passeando com um golden retriever feliz" />
       <img src="img/logo2.png" alt="Logo CÃOminho da Felicidade" />
     </div>
-
     <nav class="nav">
       <ul class="nav-links">
         <li><a href="#sobre">Sobre</a></li>
@@ -29,12 +29,12 @@
   </header>
 
   <main>
-    <section class="inicio">
-      <h1>Passeios alegres, seguros e cheios de carinho para seu doguinho.</h1>
-      <h2>Seu pet feliz, você tranquilo(a) — é assim que a gente caminha juntos!</h2>
+    <section class="inicio container">
+      <h1>Passeios alegres, seguros e cheios de carinho para seu dog.</h1>
+      <h2>Seu pet feliz, você tranquilo(a) <br> É assim que a gente caminha juntos!</h2>
     </section>
 
-    <section id="sobre" class="sobre">
+    <section id="sobre" class="sobre container">
       <img src="img/ftpasseio.png" alt="Dogwalker sorridente com cães felizes" />
       <div class="texto">
         <h2>Quem sou</h2>
@@ -50,11 +50,9 @@
       </div>
     </section>
 
-    <section id="depoimentos">
+    <section class="depoimentos container">
       <h2>Depoimentos</h2>
-
       <div class="carousel-wrapper">
-        <!-- Botões invisíveis para controlar o slide -->
         <input type="radio" name="carousel" id="depo1" checked>
         <input type="radio" name="carousel" id="depo2">
         <input type="radio" name="carousel" id="depo3">
@@ -67,13 +65,11 @@
               </blockquote>
               <p><strong>Mariana</strong>, tutora do Max</p>
             </div>
-
             <div class="depoimento">
               <img src="img/depoimento2.png" alt="Juliana com o Thor">
               <blockquote>"A Ana é incrível! O Thor ama os passeios e voltou a ser mais ativo."</blockquote>
               <p><strong>Juliana</strong>, tutora do Thor</p>
             </div>
-
             <div class="depoimento">
               <img src="img/depoimento3.png" alt="Ricardo com a Nina">
               <blockquote>"Profissional excelente. A Nina tem medo de tudo, mas com Ana ela se sente segura."
@@ -82,36 +78,28 @@
             </div>
           </div>
 
-          <!-- SETAS -->
-          <div class="carousel-arrows">
-            <label class="prev" for="depo3">&#10094;</label> <!-- ← -->
-            <label class="next" for="depo2">&#10095;</label> <!-- → -->
+          <div class="carousel-indicators">
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+            <div class="dot dot3"></div>
           </div>
 
-          <div class="carousel-arrows depo2">
-            <label class="prev" for="depo1">&#10094;</label>
-            <label class="next" for="depo3">&#10095;</label>
+          <div class="carousel-arrows"><label for="depo3">&#10094;</label><label for="depo2">&#10095;</label></div>
+          <div class="carousel-arrows depo2"><label for="depo1">&#10094;</label><label for="depo3">&#10095;</label>
           </div>
-
-          <div class="carousel-arrows depo3">
-            <label class="prev" for="depo2">&#10094;</label>
-            <label class="next" for="depo1">&#10095;</label>
+          <div class="carousel-arrows depo3"><label for="depo2">&#10094;</label><label for="depo1">&#10095;</label>
           </div>
         </div>
       </div>
     </section>
 
-
-
-
-    <section id="area">
+    <section id="area" class="area container">
       <h2>Área de Atuação</h2>
       <p>Atuo na Zona Sul de Londrina-PR.</p>
     </section>
 
-    <section id="valores">
+    <section id="valores" class="valores container">
       <h2>Valores</h2>
-
       <h3>Unitários</h3>
       <table>
         <thead>
@@ -135,7 +123,6 @@
           </tr>
         </tbody>
       </table>
-
       <h3>Pacotes</h3>
       <table>
         <thead>
@@ -161,45 +148,59 @@
       </table>
     </section>
 
-
-    <section id="contato">
+    <section id="contato" class="contato container">
       <h2>Contato</h2>
-      <p>Para agendamentos e dúvidas, entre em contato pelo:</p>
-      <p>Whatsapp:
-        <a href="https://wa.me/5511999999999">Clique aqui</a>
-      </p>
-      <p>Email: <a href="mailto:contato@caominho.com">contato@caominho.com</a></p>
+      <p>Para agendamentos e dúvidas:</p>
+      <p><i class="fab fa-whatsapp" style="color:#25D366;"></i> <a href="https://wa.me/5511999999999">WhatsApp</a></p>
+      <p><i class="fas fa-envelope" style="color:#d36a2a;"></i> <a
+          href="mailto:contato@caominho.com">contato@caominho.com</a></p>
     </section>
 
-    <section id="faq">
+    <section id="faq" class="faq container">
       <h2>Perguntas Frequentes</h2>
-      <dl>
-        <dt>Passeia na chuva?</dt>
-        <dd>Sim, com capa de chuva e autorização do tutor.</dd>
-        <dt>E se meu cão for bravo?</dt>
-        <dd>Utilizamos aproximação gradual e cuidadosa.</dd>
-      </dl>
+      <details>
+        <summary>Passeia na chuva?</summary>
+        <p>Sim, com capa de chuva e autorização do tutor.</p>
+      </details>
+      <details>
+        <summary>E se meu cão for bravo?</summary>
+        <p>Utilizamos aproximação gradual e cuidadosa.</p>
+      </details>
     </section>
 
-    <section id="blog">
+    <section id="blog" class="blog container">
       <h2>Blog</h2>
-      <ul>
-        <li><a href="#">Cuidando das patinhas no calor</a></li>
-        <li><a href="#">Dicas para um cão mais feliz</a></li>
-        <li><a href="#">Passeios em dias de chuva</a></li>
-      </ul>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <img src="img/blog1.png" alt="Cuidando das patinhas no calor" />
+        </article>
+
+        <article class="blog-card">
+          <img src="img/blog2.png" alt="Dicas para um cão mais feliz" />
+        </article>
+
+        <article class="blog-card">
+          <img src="img/blog3.png" alt="Passeios em dias de chuva" />
+        </article>
+      </div>
     </section>
+
+
 
     <section id="botaoflutuante">
-      <a href="https://wa.me/5511999999999?text=Olá%2C+gostaria+de+agendar+um+passeio!" class="btn-agendar"
-        target="_blank">
-        <i class="fab fa-whatsapp"></i> Agendar agora
+      <a href="https://wa.me/5511999999999?text=Olá%2C+gostaria+de+agendar+um+passeio!" target="_blank"
+        aria-label="Agendar pelo WhatsApp">
+        <i class="fab fa-whatsapp"></i>
       </a>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 CÃOminho da Felicidade. Todos os direitos reservados.</p>
+  <footer id="footer" class="footer container">
+    <p>Nos siga no Instagram</p>
+    <a href="https://instagram.com/caominhodafellicidade" target="_blank" class="instagram-link" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+      <span>@caominhodafellicidade</span>
+    </a>
   </footer>
 </body>
 
